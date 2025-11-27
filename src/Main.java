@@ -95,6 +95,30 @@ public class Main {
                     System.out.println("Precio Final: "+precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
                     System.out.println("Stock ingresado: "+stockIngresado);
+                    // Contar productos
+                    totalProductosRegistrados++;
+
+// Acumular impuestos
+                    totalIVA += ivaAplicado;
+                    totalIMC += imcAplicado;
+                    totalIRT += irtAplicado;
+                    totalTCE += tceAplicado;
+
+// Acumular total de ventas
+                    totalVentas += precioFinalProducto;
+
+// Contar categorías
+                    if(categoria == 1) contadorCat1++;
+                    else if(categoria == 2) contadorCat2++;
+                    else if(categoria == 3) contadorCat3++;
+                    else if(categoria == 4) contadorCat4++;
+
+// Verificar si es el producto más caro
+                    if(precioFinalProducto > mayorPrecioFinal){
+                        mayorPrecioFinal = precioFinalProducto;
+                        productoMayorPrecio = nombreProducto;
+                    }
+
                 }
 
 
@@ -118,10 +142,10 @@ public class Main {
                         "– 3 = Accesorios (exentos de IVA)\n" +
                         "– 4 = Redes y telecomunicaciones");
                 categoria = input.nextInt();
-                if(categoria==1){nombreCategoria="Electronica personal";}
-                else if(categoria==2){nombreCategoria="Componentes de computo";}
-                else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)";}
-                else if(categoria==4){nombreCategoria="Redes y telecomunicaciones";}
+                if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
+                else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
+                else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
+                else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
             }while(categoria>4 || categoria<1);
             do{
                 System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
@@ -146,6 +170,30 @@ public class Main {
             System.out.println("Precio Final: "+precioFinalProducto);
             System.out.println("Categoria: " + nombreCategoria);
             System.out.println("Stock ingresado: "+stockIngresado);
+            // Contar productos
+            totalProductosRegistrados++;
+
+// Acumular impuestos
+            totalIVA += ivaAplicado;
+            totalIMC += imcAplicado;
+            totalIRT += irtAplicado;
+            totalTCE += tceAplicado;
+
+// Acumular total de ventas
+            totalVentas += precioFinalProducto;
+
+// Contar categorías
+            if(categoria == 1) contadorCat1++;
+            else if(categoria == 2) contadorCat2++;
+            else if(categoria == 3) contadorCat3++;
+            else if(categoria == 4) contadorCat4++;
+
+// Verificar si es el producto más caro
+            if(precioFinalProducto > mayorPrecioFinal){
+                mayorPrecioFinal = precioFinalProducto;
+                productoMayorPrecio = nombreProducto;
+            }
+
         }
 
             case 3:
@@ -168,10 +216,10 @@ public class Main {
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal";}
-                        else if(categoria==2){nombreCategoria="Componentes de computo";}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)";}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones";}
+                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
+                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
+                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
+                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
                     }while(categoria>4 || categoria<1);
                     do{
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
@@ -196,6 +244,30 @@ public class Main {
                     System.out.println("Precio Final: "+precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
                     System.out.println("Stock ingresado: "+stockIngresado);
+                    // Contar productos
+                    totalProductosRegistrados++;
+
+// Acumular impuestos
+                    totalIVA += ivaAplicado;
+                    totalIMC += imcAplicado;
+                    totalIRT += irtAplicado;
+                    totalTCE += tceAplicado;
+
+// Acumular total de ventas
+                    totalVentas += precioFinalProducto;
+
+// Contar categorías
+                    if(categoria == 1) contadorCat1++;
+                    else if(categoria == 2) contadorCat2++;
+                    else if(categoria == 3) contadorCat3++;
+                    else if(categoria == 4) contadorCat4++;
+
+// Verificar si es el producto más caro
+                    if(precioFinalProducto > mayorPrecioFinal){
+                        mayorPrecioFinal = precioFinalProducto;
+                        productoMayorPrecio = nombreProducto;
+                    }
+
                 }
 
             case 4:
@@ -218,10 +290,10 @@ public class Main {
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal";}
-                        else if(categoria==2){nombreCategoria="Componentes de computo";}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)";}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones";}
+                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
+                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
+                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
+                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
                     }while(categoria>4 || categoria<1);
                     do{
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
@@ -246,6 +318,30 @@ public class Main {
                     System.out.println("Precio Final: "+precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
                     System.out.println("Stock ingresado: "+stockIngresado);
+                    // Contar productos
+                    totalProductosRegistrados++;
+
+// Acumular impuestos
+                    totalIVA += ivaAplicado;
+                    totalIMC += imcAplicado;
+                    totalIRT += irtAplicado;
+                    totalTCE += tceAplicado;
+
+// Acumular total de ventas
+                    totalVentas += precioFinalProducto;
+
+// Contar categorías
+                    if(categoria == 1) contadorCat1++;
+                    else if(categoria == 2) contadorCat2++;
+                    else if(categoria == 3) contadorCat3++;
+                    else if(categoria == 4) contadorCat4++;
+
+// Verificar si es el producto más caro
+                    if(precioFinalProducto > mayorPrecioFinal){
+                        mayorPrecioFinal = precioFinalProducto;
+                        productoMayorPrecio = nombreProducto;
+                    }
+
                 }
 
 
@@ -269,10 +365,10 @@ public class Main {
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal";}
-                        else if(categoria==2){nombreCategoria="Componentes de computo";}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)";}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones";}
+                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
+                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
+                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
+                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
                     }while(categoria>4 || categoria<1);
                     do{
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
@@ -297,6 +393,30 @@ public class Main {
                     System.out.println("Precio Final: "+precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
                     System.out.println("Stock ingresado: "+stockIngresado);
+                    // Contar productos
+                    totalProductosRegistrados++;
+
+// Acumular impuestos
+                    totalIVA += ivaAplicado;
+                    totalIMC += imcAplicado;
+                    totalIRT += irtAplicado;
+                    totalTCE += tceAplicado;
+
+// Acumular total de ventas
+                    totalVentas += precioFinalProducto;
+
+// Contar categorías
+                    if(categoria == 1) contadorCat1++;
+                    else if(categoria == 2) contadorCat2++;
+                    else if(categoria == 3) contadorCat3++;
+                    else if(categoria == 4) contadorCat4++;
+
+// Verificar si es el producto más caro
+                    if(precioFinalProducto > mayorPrecioFinal){
+                        mayorPrecioFinal = precioFinalProducto;
+                        productoMayorPrecio = nombreProducto;
+                    }
+
                 }
 
 
@@ -320,10 +440,10 @@ public class Main {
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal";}
-                        else if(categoria==2){nombreCategoria="Componentes de computo";}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)";}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones";}
+                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
+                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
+                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
+                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
                     }while(categoria>4 || categoria<1);
                     do{
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
@@ -351,8 +471,134 @@ public class Main {
                     System.out.println("Precio Final: "+precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
                     System.out.println("Stock ingresado: "+stockIngresado);
-                }
+                    // Contar productos
+                    totalProductosRegistrados++;
 
+// Acumular impuestos
+                    totalIVA += ivaAplicado;
+                    totalIMC += imcAplicado;
+                    totalIRT += irtAplicado;
+                    totalTCE += tceAplicado;
+
+// Acumular total de ventas
+                    totalVentas += precioFinalProducto;
+
+// Contar categorías
+                    if(categoria == 1) contadorCat1++;
+                    else if(categoria == 2) contadorCat2++;
+                    else if(categoria == 3) contadorCat3++;
+                    else if(categoria == 4) contadorCat4++;
+
+// Verificar si es el producto más caro
+                    if(precioFinalProducto > mayorPrecioFinal){
+                        mayorPrecioFinal = precioFinalProducto;
+                        productoMayorPrecio = nombreProducto;
+                    }
+
+                }
+            case 7:
+                for(int productosIngresados = 0;
+                    productosIngresados<=limiteMaximoProducto;
+                    productosIngresados++
+                ) {
+                    System.out.println("Haz seleccionado el dia Domingo");
+                    System.out.println("Ingresa el nombre del producto:");
+                    do{
+                        nombreProducto = input.nextLine();
+                    }while(nombreProducto.length()==0);
+                    do{
+                        System.out.println("Ingresa el precio del producto el formato es (0.0)");
+                        precioBase = input.nextFloat();
+                    }while(precioBase<=0);
+                    do{
+                        System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
+                                "– 2 = Componentes de computo\n" +
+                                "– 3 = Accesorios (exentos de IVA)\n" +
+                                "– 4 = Redes y telecomunicaciones");
+                        categoria = input.nextInt();
+                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
+                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
+                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
+                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
+                    }while(categoria>4 || categoria<1);
+                    do{
+                        System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
+                        riesgoTecnologico= input.nextInt();
+                    }while(riesgoTecnologico<0||riesgoTecnologico>1);
+                    do{
+                        System.out.println("Ingrese el stock (minimo 1)");
+                        stockIngresado = input.nextInt();
+                    }while(stockIngresado<1);
+
+                    System.out.println("Producto ingresado "+nombreProducto);
+                    System.out.println("Precio base: "+precioBase);
+                    if(categoria!=3){
+                        ivaAplicado = precioBase * iva;
+                        System.out.println("Iva aplicado: "+ivaAplicado);
+                    }
+                    System.out.println("Imc aplicado:"+imcAplicado);
+                    if(riesgoTecnologico==1){
+                        irtAplicado = precioBase * irt;
+                        System.out.println("IRT aplicado: " + irtAplicado);
+                    }
+                    tceAplicado = precioBase * tce;
+                    System.out.println("TCE aplicado: " + tceAplicado);
+                    precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: "+precioFinalProducto);
+                    System.out.println("Categoria: " + nombreCategoria);
+                    System.out.println("Stock ingresado: "+stockIngresado);
+                    // Contar productos
+                    totalProductosRegistrados++;
+
+// Acumular impuestos
+                    totalIVA += ivaAplicado;
+                    totalIMC += imcAplicado;
+                    totalIRT += irtAplicado;
+                    totalTCE += tceAplicado;
+
+// Acumular total de ventas
+                    totalVentas += precioFinalProducto;
+
+// Contar categorías
+                    if(categoria == 1) contadorCat1++;
+                    else if(categoria == 2) contadorCat2++;
+                    else if(categoria == 3) contadorCat3++;
+                    else if(categoria == 4) contadorCat4++;
+
+// Verificar si es el producto más caro
+                    if(precioFinalProducto > mayorPrecioFinal){
+                        mayorPrecioFinal = precioFinalProducto;
+                        productoMayorPrecio = nombreProducto;
+                    }
+
+                }
         }
+        System.out.println("\n====== REPORTE FINAL DEL DÍA ======");
+
+        System.out.println("Total de productos registrados: " + totalProductosRegistrados);
+        System.out.println("Total recaudado en IVA: " + totalIVA);
+        System.out.println("Total recaudado en IMC: " + totalIMC);
+        System.out.println("Total recaudado en IRT: " + totalIRT);
+        System.out.println("Total recaudado en TCE: " + totalTCE);
+        System.out.println("Monto total acumulado de ventas: " + totalVentas);
+
+// Determinar categoría con mayor número de productos
+        int mayorCategoria = Math.max(Math.max(contadorCat1, contadorCat2),
+                Math.max(contadorCat3, contadorCat4));
+
+        String categoriaMayor = "";
+        if(mayorCategoria == contadorCat1) categoriaMayor = "Electrónica personal";
+        else if(mayorCategoria == contadorCat2) categoriaMayor = "Componentes de cómputo";
+        else if(mayorCategoria == contadorCat3) categoriaMayor = "Accesorios (sin IVA)";
+        else categoriaMayor = "Redes y telecomunicaciones";
+
+        System.out.println("Categoría con más productos: " + categoriaMayor);
+
+// Producto con mayor precio
+        System.out.println("Producto con mayor precio final: " + productoMayorPrecio +
+                " ($" + mayorPrecioFinal + ")");
+
+        System.out.println("====================================");
+
     }
 }
