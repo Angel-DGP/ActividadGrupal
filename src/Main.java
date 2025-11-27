@@ -48,53 +48,62 @@ public class Main {
         var productoMayorPrecio = "";
         switch (diaSemana) {
             case 1:
-                for(int productosIngresados = 0;
-                    productosIngresados<=limiteMaximoProducto;
-                    productosIngresados++
+                for (int productosIngresados = 0;
+                     productosIngresados <= limiteMaximoProducto;
+                     productosIngresados++
                 ) {
                     System.out.println("Haz seleccionado el dia Lunes");
                     System.out.println("Ingresa el nombre del producto:");
-                    do{
+                    do {
                         nombreProducto = input.nextLine();
-                    }while(nombreProducto.length()==0);
-                    do{
+                    } while (nombreProducto.length() == 0);
+                    do {
                         System.out.println("Ingresa el precio del producto el formato es (0.0)");
                         precioBase = input.nextFloat();
-                    }while(precioBase<=0);
-                    do{
+                    } while (precioBase <= 0);
+                    do {
                         System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
                                 "– 2 = Componentes de computo\n" +
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
-                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
-                    }while(categoria>4 || categoria<1);
-                    do{
+                        if (categoria == 1) {
+                            nombreCategoria = "Electronica personal";
+                            contadorCat1++;
+                        } else if (categoria == 2) {
+                            nombreCategoria = "Componentes de computo";
+                            contadorCat2++;
+                        } else if (categoria == 3) {
+                            nombreCategoria = "Accesorios (exentos de IVA)";
+                            contadorCat3++;
+                        } else if (categoria == 4) {
+                            nombreCategoria = "Redes y telecomunicaciones";
+                            contadorCat4++;
+                        }
+                    } while (categoria > 4 || categoria < 1);
+                    do {
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
-                        riesgoTecnologico= input.nextInt();
-                    }while(riesgoTecnologico<0||riesgoTecnologico>1);
-                    do{
+                        riesgoTecnologico = input.nextInt();
+                    } while (riesgoTecnologico < 0 || riesgoTecnologico > 1);
+                    do {
                         System.out.println("Ingrese el stock (minimo 1)");
                         stockIngresado = input.nextInt();
-                    }while(stockIngresado<1);
-                    System.out.println("Producto ingresado "+nombreProducto);
-                    System.out.println("Precio base: "+precioBase);
-                    if(categoria!=3){
+                    } while (stockIngresado < 1);
+                    System.out.println("Producto ingresado " + nombreProducto);
+                    System.out.println("Precio base: " + precioBase);
+                    if (categoria != 3) {
                         ivaAplicado = precioBase * iva;
-                        System.out.println("Iva aplicado: "+ivaAplicado);
+                        System.out.println("Iva aplicado: " + ivaAplicado);
                     }
-                    System.out.println("Imc aplicado:"+imcAplicado);
-                    if(riesgoTecnologico==1){
+                    System.out.println("Imc aplicado:" + imcAplicado);
+                    if (riesgoTecnologico == 1) {
                         irtAplicado = precioBase * irt;
                         System.out.println("IRT aplicado: " + irtAplicado);
                     }
-                    precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
-                    System.out.println("Precio Final: "+precioFinalProducto);
+                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: " + precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
-                    System.out.println("Stock ingresado: "+stockIngresado);
+                    System.out.println("Stock ingresado: " + stockIngresado);
                     // Contar productos
                     totalProductosRegistrados++;
 
@@ -108,142 +117,160 @@ public class Main {
                     totalVentas += precioFinalProducto;
 
 // Contar categorías
-                    if(categoria == 1) contadorCat1++;
-                    else if(categoria == 2) contadorCat2++;
-                    else if(categoria == 3) contadorCat3++;
-                    else if(categoria == 4) contadorCat4++;
+                    if (categoria == 1) contadorCat1++;
+                    else if (categoria == 2) contadorCat2++;
+                    else if (categoria == 3) contadorCat3++;
+                    else if (categoria == 4) contadorCat4++;
 
 // Verificar si es el producto más caro
-                    if(precioFinalProducto > mayorPrecioFinal){
+                    if (precioFinalProducto > mayorPrecioFinal) {
                         mayorPrecioFinal = precioFinalProducto;
                         productoMayorPrecio = nombreProducto;
                     }
 
                 }
+                break;
 
-
-        case 2:
-        for(int productosIngresados = 0;
-            productosIngresados<=limiteMaximoProducto;
-            productosIngresados++
-        ) {
-            System.out.println("Haz seleccionado el dia Martes");
-            System.out.println("Ingresa el nombre del producto:");
-            do{
-                nombreProducto = input.nextLine();
-            }while(nombreProducto.length()==0);
-            do{
-                System.out.println("Ingresa el precio del producto el formato es (0.0)");
-                precioBase = input.nextFloat();
-            }while(precioBase<=0);
-            do{
-                System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
-                        "– 2 = Componentes de computo\n" +
-                        "– 3 = Accesorios (exentos de IVA)\n" +
-                        "– 4 = Redes y telecomunicaciones");
-                categoria = input.nextInt();
-                if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
-                else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
-                else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
-                else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
-            }while(categoria>4 || categoria<1);
-            do{
-                System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
-                riesgoTecnologico= input.nextInt();
-            }while(riesgoTecnologico<0||riesgoTecnologico>1);
-            do{
-                System.out.println("Ingrese el stock (minimo 1)");
-                stockIngresado = input.nextInt();
-            }while(stockIngresado<1);
-            System.out.println("Producto ingresado "+nombreProducto);
-            System.out.println("Precio base: "+precioBase);
-            if(categoria!=3){
-                ivaAplicado = precioBase * iva;
-                System.out.println("Iva aplicado: "+ivaAplicado);
-            }
-            System.out.println("Imc aplicado:"+imcAplicado);
-            if(riesgoTecnologico==1){
-                irtAplicado = precioBase * irt;
-                System.out.println("IRT aplicado: " + irtAplicado);
-            }
-            precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
-            System.out.println("Precio Final: "+precioFinalProducto);
-            System.out.println("Categoria: " + nombreCategoria);
-            System.out.println("Stock ingresado: "+stockIngresado);
-            // Contar productos
-            totalProductosRegistrados++;
+            case 2:
+                for (int productosIngresados = 0;
+                     productosIngresados <= limiteMaximoProducto;
+                     productosIngresados++
+                ) {
+                    System.out.println("Haz seleccionado el dia Martes");
+                    System.out.println("Ingresa el nombre del producto:");
+                    do {
+                        nombreProducto = input.nextLine();
+                    } while (nombreProducto.length() == 0);
+                    do {
+                        System.out.println("Ingresa el precio del producto el formato es (0.0)");
+                        precioBase = input.nextFloat();
+                    } while (precioBase <= 0);
+                    do {
+                        System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
+                                "– 2 = Componentes de computo\n" +
+                                "– 3 = Accesorios (exentos de IVA)\n" +
+                                "– 4 = Redes y telecomunicaciones");
+                        categoria = input.nextInt();
+                        if (categoria == 1) {
+                            nombreCategoria = "Electronica personal";
+                            contadorCat1++;
+                        } else if (categoria == 2) {
+                            nombreCategoria = "Componentes de computo";
+                            contadorCat2++;
+                        } else if (categoria == 3) {
+                            nombreCategoria = "Accesorios (exentos de IVA)";
+                            contadorCat3++;
+                        } else if (categoria == 4) {
+                            nombreCategoria = "Redes y telecomunicaciones";
+                            contadorCat4++;
+                        }
+                    } while (categoria > 4 || categoria < 1);
+                    do {
+                        System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
+                        riesgoTecnologico = input.nextInt();
+                    } while (riesgoTecnologico < 0 || riesgoTecnologico > 1);
+                    do {
+                        System.out.println("Ingrese el stock (minimo 1)");
+                        stockIngresado = input.nextInt();
+                    } while (stockIngresado < 1);
+                    System.out.println("Producto ingresado " + nombreProducto);
+                    System.out.println("Precio base: " + precioBase);
+                    if (categoria != 3) {
+                        ivaAplicado = precioBase * iva;
+                        System.out.println("Iva aplicado: " + ivaAplicado);
+                    }
+                    System.out.println("Imc aplicado:" + imcAplicado);
+                    if (riesgoTecnologico == 1) {
+                        irtAplicado = precioBase * irt;
+                        System.out.println("IRT aplicado: " + irtAplicado);
+                    }
+                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: " + precioFinalProducto);
+                    System.out.println("Categoria: " + nombreCategoria);
+                    System.out.println("Stock ingresado: " + stockIngresado);
+                    // Contar productos
+                    totalProductosRegistrados++;
 
 // Acumular impuestos
-            totalIVA += ivaAplicado;
-            totalIMC += imcAplicado;
-            totalIRT += irtAplicado;
-            totalTCE += tceAplicado;
+                    totalIVA += ivaAplicado;
+                    totalIMC += imcAplicado;
+                    totalIRT += irtAplicado;
+                    totalTCE += tceAplicado;
 
 // Acumular total de ventas
-            totalVentas += precioFinalProducto;
+                    totalVentas += precioFinalProducto;
 
 // Contar categorías
-            if(categoria == 1) contadorCat1++;
-            else if(categoria == 2) contadorCat2++;
-            else if(categoria == 3) contadorCat3++;
-            else if(categoria == 4) contadorCat4++;
+                    if (categoria == 1) contadorCat1++;
+                    else if (categoria == 2) contadorCat2++;
+                    else if (categoria == 3) contadorCat3++;
+                    else if (categoria == 4) contadorCat4++;
 
 // Verificar si es el producto más caro
-            if(precioFinalProducto > mayorPrecioFinal){
-                mayorPrecioFinal = precioFinalProducto;
-                productoMayorPrecio = nombreProducto;
-            }
+                    if (precioFinalProducto > mayorPrecioFinal) {
+                        mayorPrecioFinal = precioFinalProducto;
+                        productoMayorPrecio = nombreProducto;
+                    }
 
-        }
-
+                }
+                break;
             case 3:
-                for(int productosIngresados = 0;
-                    productosIngresados<=limiteMaximoProducto;
-                    productosIngresados++
+                for (int productosIngresados = 0;
+                     productosIngresados <= limiteMaximoProducto;
+                     productosIngresados++
                 ) {
                     System.out.println("Haz seleccionado el dia Miercoles");
                     System.out.println("Ingresa el nombre del producto:");
-                    do{
+                    do {
                         nombreProducto = input.nextLine();
-                    }while(nombreProducto.length()==0);
-                    do{
+                    } while (nombreProducto.length() == 0);
+                    do {
                         System.out.println("Ingresa el precio del producto el formato es (0.0)");
                         precioBase = input.nextFloat();
-                    }while(precioBase<=0);
-                    do{
+                    } while (precioBase <= 0);
+                    do {
                         System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
                                 "– 2 = Componentes de computo\n" +
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
-                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
-                    }while(categoria>4 || categoria<1);
-                    do{
+                        if (categoria == 1) {
+                            nombreCategoria = "Electronica personal";
+                            contadorCat1++;
+                        } else if (categoria == 2) {
+                            nombreCategoria = "Componentes de computo";
+                            contadorCat2++;
+                        } else if (categoria == 3) {
+                            nombreCategoria = "Accesorios (exentos de IVA)";
+                            contadorCat3++;
+                        } else if (categoria == 4) {
+                            nombreCategoria = "Redes y telecomunicaciones";
+                            contadorCat4++;
+                        }
+                    } while (categoria > 4 || categoria < 1);
+                    do {
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
-                        riesgoTecnologico= input.nextInt();
-                    }while(riesgoTecnologico<0||riesgoTecnologico>1);
-                    do{
+                        riesgoTecnologico = input.nextInt();
+                    } while (riesgoTecnologico < 0 || riesgoTecnologico > 1);
+                    do {
                         System.out.println("Ingrese el stock (minimo 1)");
                         stockIngresado = input.nextInt();
-                    }while(stockIngresado<1);
-                    System.out.println("Producto ingresado "+nombreProducto);
-                    System.out.println("Precio base: "+precioBase);
-                    if(categoria!=3){
+                    } while (stockIngresado < 1);
+                    System.out.println("Producto ingresado " + nombreProducto);
+                    System.out.println("Precio base: " + precioBase);
+                    if (categoria != 3) {
                         ivaAplicado = precioBase * iva;
-                        System.out.println("Iva aplicado: "+ivaAplicado);
+                        System.out.println("Iva aplicado: " + ivaAplicado);
                     }
-                    System.out.println("Imc aplicado:"+imcAplicado);
-                    if(riesgoTecnologico==1){
+                    System.out.println("Imc aplicado:" + imcAplicado);
+                    if (riesgoTecnologico == 1) {
                         irtAplicado = precioBase * irt;
                         System.out.println("IRT aplicado: " + irtAplicado);
                     }
-                    precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
-                    System.out.println("Precio Final: "+precioFinalProducto);
+                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: " + precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
-                    System.out.println("Stock ingresado: "+stockIngresado);
+                    System.out.println("Stock ingresado: " + stockIngresado);
                     // Contar productos
                     totalProductosRegistrados++;
 
@@ -257,67 +284,76 @@ public class Main {
                     totalVentas += precioFinalProducto;
 
 // Contar categorías
-                    if(categoria == 1) contadorCat1++;
-                    else if(categoria == 2) contadorCat2++;
-                    else if(categoria == 3) contadorCat3++;
-                    else if(categoria == 4) contadorCat4++;
+                    if (categoria == 1) contadorCat1++;
+                    else if (categoria == 2) contadorCat2++;
+                    else if (categoria == 3) contadorCat3++;
+                    else if (categoria == 4) contadorCat4++;
 
 // Verificar si es el producto más caro
-                    if(precioFinalProducto > mayorPrecioFinal){
+                    if (precioFinalProducto > mayorPrecioFinal) {
                         mayorPrecioFinal = precioFinalProducto;
                         productoMayorPrecio = nombreProducto;
                     }
 
                 }
-
+                break;
             case 4:
-                for(int productosIngresados = 0;
-                    productosIngresados<=limiteMaximoProducto;
-                    productosIngresados++
+                for (int productosIngresados = 0;
+                     productosIngresados <= limiteMaximoProducto;
+                     productosIngresados++
                 ) {
                     System.out.println("Haz seleccionado el dia Jueves");
                     System.out.println("Ingresa el nombre del producto:");
-                    do{
+                    do {
                         nombreProducto = input.nextLine();
-                    }while(nombreProducto.length()==0);
-                    do{
+                    } while (nombreProducto.length() == 0);
+                    do {
                         System.out.println("Ingresa el precio del producto el formato es (0.0)");
                         precioBase = input.nextFloat();
-                    }while(precioBase<=0);
-                    do{
+                    } while (precioBase <= 0);
+                    do {
                         System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
                                 "– 2 = Componentes de computo\n" +
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
-                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
-                    }while(categoria>4 || categoria<1);
-                    do{
+                        if (categoria == 1) {
+                            nombreCategoria = "Electronica personal";
+                            contadorCat1++;
+                        } else if (categoria == 2) {
+                            nombreCategoria = "Componentes de computo";
+                            contadorCat2++;
+                        } else if (categoria == 3) {
+                            nombreCategoria = "Accesorios (exentos de IVA)";
+                            contadorCat3++;
+                        } else if (categoria == 4) {
+                            nombreCategoria = "Redes y telecomunicaciones";
+                            contadorCat4++;
+                        }
+                    } while (categoria > 4 || categoria < 1);
+                    do {
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
-                        riesgoTecnologico= input.nextInt();
-                    }while(riesgoTecnologico<0||riesgoTecnologico>1);
-                    do{
+                        riesgoTecnologico = input.nextInt();
+                    } while (riesgoTecnologico < 0 || riesgoTecnologico > 1);
+                    do {
                         System.out.println("Ingrese el stock (minimo 1)");
                         stockIngresado = input.nextInt();
-                    }while(stockIngresado<1);
-                    System.out.println("Producto ingresado "+nombreProducto);
-                    System.out.println("Precio base: "+precioBase);
-                    if(categoria!=3){
+                    } while (stockIngresado < 1);
+                    System.out.println("Producto ingresado " + nombreProducto);
+                    System.out.println("Precio base: " + precioBase);
+                    if (categoria != 3) {
                         ivaAplicado = precioBase * iva;
-                        System.out.println("Iva aplicado: "+ivaAplicado);
+                        System.out.println("Iva aplicado: " + ivaAplicado);
                     }
-                    System.out.println("Imc aplicado:"+imcAplicado);
-                    if(riesgoTecnologico==1){
+                    System.out.println("Imc aplicado:" + imcAplicado);
+                    if (riesgoTecnologico == 1) {
                         irtAplicado = precioBase * irt;
                         System.out.println("IRT aplicado: " + irtAplicado);
                     }
-                    precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
-                    System.out.println("Precio Final: "+precioFinalProducto);
+                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: " + precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
-                    System.out.println("Stock ingresado: "+stockIngresado);
+                    System.out.println("Stock ingresado: " + stockIngresado);
                     // Contar productos
                     totalProductosRegistrados++;
 
@@ -331,68 +367,77 @@ public class Main {
                     totalVentas += precioFinalProducto;
 
 // Contar categorías
-                    if(categoria == 1) contadorCat1++;
-                    else if(categoria == 2) contadorCat2++;
-                    else if(categoria == 3) contadorCat3++;
-                    else if(categoria == 4) contadorCat4++;
+                    if (categoria == 1) contadorCat1++;
+                    else if (categoria == 2) contadorCat2++;
+                    else if (categoria == 3) contadorCat3++;
+                    else if (categoria == 4) contadorCat4++;
 
 // Verificar si es el producto más caro
-                    if(precioFinalProducto > mayorPrecioFinal){
+                    if (precioFinalProducto > mayorPrecioFinal) {
                         mayorPrecioFinal = precioFinalProducto;
                         productoMayorPrecio = nombreProducto;
                     }
 
                 }
 
-
+                break;
             case 5:
-                for(int productosIngresados = 0;
-                    productosIngresados<=limiteMaximoProducto;
-                    productosIngresados++
+                for (int productosIngresados = 0;
+                     productosIngresados <= limiteMaximoProducto;
+                     productosIngresados++
                 ) {
                     System.out.println("Haz seleccionado el dia Viernes");
                     System.out.println("Ingresa el nombre del producto:");
-                    do{
+                    do {
                         nombreProducto = input.nextLine();
-                    }while(nombreProducto.length()==0);
-                    do{
+                    } while (nombreProducto.length() == 0);
+                    do {
                         System.out.println("Ingresa el precio del producto el formato es (0.0)");
                         precioBase = input.nextFloat();
-                    }while(precioBase<=0);
-                    do{
+                    } while (precioBase <= 0);
+                    do {
                         System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
                                 "– 2 = Componentes de computo\n" +
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
-                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
-                    }while(categoria>4 || categoria<1);
-                    do{
+                        if (categoria == 1) {
+                            nombreCategoria = "Electronica personal";
+                            contadorCat1++;
+                        } else if (categoria == 2) {
+                            nombreCategoria = "Componentes de computo";
+                            contadorCat2++;
+                        } else if (categoria == 3) {
+                            nombreCategoria = "Accesorios (exentos de IVA)";
+                            contadorCat3++;
+                        } else if (categoria == 4) {
+                            nombreCategoria = "Redes y telecomunicaciones";
+                            contadorCat4++;
+                        }
+                    } while (categoria > 4 || categoria < 1);
+                    do {
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
-                        riesgoTecnologico= input.nextInt();
-                    }while(riesgoTecnologico<0||riesgoTecnologico>1);
-                    do{
+                        riesgoTecnologico = input.nextInt();
+                    } while (riesgoTecnologico < 0 || riesgoTecnologico > 1);
+                    do {
                         System.out.println("Ingrese el stock (minimo 1)");
                         stockIngresado = input.nextInt();
-                    }while(stockIngresado<1);
-                    System.out.println("Producto ingresado "+nombreProducto);
-                    System.out.println("Precio base: "+precioBase);
-                    if(categoria!=3){
+                    } while (stockIngresado < 1);
+                    System.out.println("Producto ingresado " + nombreProducto);
+                    System.out.println("Precio base: " + precioBase);
+                    if (categoria != 3) {
                         ivaAplicado = precioBase * iva;
-                        System.out.println("Iva aplicado: "+ivaAplicado);
+                        System.out.println("Iva aplicado: " + ivaAplicado);
                     }
-                    System.out.println("Imc aplicado:"+imcAplicado);
-                    if(riesgoTecnologico==1){
+                    System.out.println("Imc aplicado:" + imcAplicado);
+                    if (riesgoTecnologico == 1) {
                         irtAplicado = precioBase * irt;
                         System.out.println("IRT aplicado: " + irtAplicado);
                     }
-                    precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
-                    System.out.println("Precio Final: "+precioFinalProducto);
+                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: " + precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
-                    System.out.println("Stock ingresado: "+stockIngresado);
+                    System.out.println("Stock ingresado: " + stockIngresado);
                     // Contar productos
                     totalProductosRegistrados++;
 
@@ -406,71 +451,80 @@ public class Main {
                     totalVentas += precioFinalProducto;
 
 // Contar categorías
-                    if(categoria == 1) contadorCat1++;
-                    else if(categoria == 2) contadorCat2++;
-                    else if(categoria == 3) contadorCat3++;
-                    else if(categoria == 4) contadorCat4++;
+                    if (categoria == 1) contadorCat1++;
+                    else if (categoria == 2) contadorCat2++;
+                    else if (categoria == 3) contadorCat3++;
+                    else if (categoria == 4) contadorCat4++;
 
 // Verificar si es el producto más caro
-                    if(precioFinalProducto > mayorPrecioFinal){
+                    if (precioFinalProducto > mayorPrecioFinal) {
                         mayorPrecioFinal = precioFinalProducto;
                         productoMayorPrecio = nombreProducto;
                     }
 
                 }
-
+                break;
 
             case 6:
-                for(int productosIngresados = 0;
-                    productosIngresados<=limiteMaximoProducto;
-                    productosIngresados++
+                for (int productosIngresados = 0;
+                     productosIngresados <= limiteMaximoProducto;
+                     productosIngresados++
                 ) {
                     System.out.println("Haz seleccionado el dia Sabado");
                     System.out.println("Ingresa el nombre del producto:");
-                    do{
+                    do {
                         nombreProducto = input.nextLine();
-                    }while(nombreProducto.length()==0);
-                    do{
+                    } while (nombreProducto.length() == 0);
+                    do {
                         System.out.println("Ingresa el precio del producto el formato es (0.0)");
                         precioBase = input.nextFloat();
-                    }while(precioBase<=0);
-                    do{
+                    } while (precioBase <= 0);
+                    do {
                         System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
                                 "– 2 = Componentes de computo\n" +
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
-                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
-                    }while(categoria>4 || categoria<1);
-                    do{
+                        if (categoria == 1) {
+                            nombreCategoria = "Electronica personal";
+                            contadorCat1++;
+                        } else if (categoria == 2) {
+                            nombreCategoria = "Componentes de computo";
+                            contadorCat2++;
+                        } else if (categoria == 3) {
+                            nombreCategoria = "Accesorios (exentos de IVA)";
+                            contadorCat3++;
+                        } else if (categoria == 4) {
+                            nombreCategoria = "Redes y telecomunicaciones";
+                            contadorCat4++;
+                        }
+                    } while (categoria > 4 || categoria < 1);
+                    do {
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
-                        riesgoTecnologico= input.nextInt();
-                    }while(riesgoTecnologico<0||riesgoTecnologico>1);
-                    do{
+                        riesgoTecnologico = input.nextInt();
+                    } while (riesgoTecnologico < 0 || riesgoTecnologico > 1);
+                    do {
                         System.out.println("Ingrese el stock (minimo 1)");
                         stockIngresado = input.nextInt();
-                    }while(stockIngresado<1);
+                    } while (stockIngresado < 1);
 
-                    System.out.println("Producto ingresado "+nombreProducto);
-                    System.out.println("Precio base: "+precioBase);
-                    if(categoria!=3){
+                    System.out.println("Producto ingresado " + nombreProducto);
+                    System.out.println("Precio base: " + precioBase);
+                    if (categoria != 3) {
                         ivaAplicado = precioBase * iva;
-                        System.out.println("Iva aplicado: "+ivaAplicado);
+                        System.out.println("Iva aplicado: " + ivaAplicado);
                     }
-                    System.out.println("Imc aplicado:"+imcAplicado);
-                    if(riesgoTecnologico==1){
+                    System.out.println("Imc aplicado:" + imcAplicado);
+                    if (riesgoTecnologico == 1) {
                         irtAplicado = precioBase * irt;
                         System.out.println("IRT aplicado: " + irtAplicado);
                     }
                     tceAplicado = precioBase * tce;
                     System.out.println("TCE aplicado: " + tceAplicado);
-                    precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
-                    System.out.println("Precio Final: "+precioFinalProducto);
+                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: " + precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
-                    System.out.println("Stock ingresado: "+stockIngresado);
+                    System.out.println("Stock ingresado: " + stockIngresado);
                     // Contar productos
                     totalProductosRegistrados++;
 
@@ -484,69 +538,79 @@ public class Main {
                     totalVentas += precioFinalProducto;
 
 // Contar categorías
-                    if(categoria == 1) contadorCat1++;
-                    else if(categoria == 2) contadorCat2++;
-                    else if(categoria == 3) contadorCat3++;
-                    else if(categoria == 4) contadorCat4++;
+                    if (categoria == 1) contadorCat1++;
+                    else if (categoria == 2) contadorCat2++;
+                    else if (categoria == 3) contadorCat3++;
+                    else if (categoria == 4) contadorCat4++;
 
 // Verificar si es el producto más caro
-                    if(precioFinalProducto > mayorPrecioFinal){
+                    if (precioFinalProducto > mayorPrecioFinal) {
                         mayorPrecioFinal = precioFinalProducto;
                         productoMayorPrecio = nombreProducto;
                     }
 
                 }
+                break;
             case 7:
-                for(int productosIngresados = 0;
-                    productosIngresados<=limiteMaximoProducto;
-                    productosIngresados++
+                for (int productosIngresados = 0;
+                     productosIngresados <= limiteMaximoProducto;
+                     productosIngresados++
                 ) {
                     System.out.println("Haz seleccionado el dia Domingo");
                     System.out.println("Ingresa el nombre del producto:");
-                    do{
+                    do {
                         nombreProducto = input.nextLine();
-                    }while(nombreProducto.length()==0);
-                    do{
+                    } while (nombreProducto.length() == 0);
+                    do {
                         System.out.println("Ingresa el precio del producto el formato es (0.0)");
                         precioBase = input.nextFloat();
-                    }while(precioBase<=0);
-                    do{
+                    } while (precioBase <= 0);
+                    do {
                         System.out.println("Ingresa la categoria: \n– 1 = Electronica personal\n" +
                                 "– 2 = Componentes de computo\n" +
                                 "– 3 = Accesorios (exentos de IVA)\n" +
                                 "– 4 = Redes y telecomunicaciones");
                         categoria = input.nextInt();
-                        if(categoria==1){nombreCategoria="Electronica personal"; contadorCat1++;}
-                        else if(categoria==2){nombreCategoria="Componentes de computo"; contadorCat2++;}
-                        else if(categoria==3){nombreCategoria="Accesorios (exentos de IVA)"; contadorCat3++;}
-                        else if(categoria==4){nombreCategoria="Redes y telecomunicaciones"; contadorCat4++;}
-                    }while(categoria>4 || categoria<1);
-                    do{
+                        if (categoria == 1) {
+                            nombreCategoria = "Electronica personal";
+                            contadorCat1++;
+                        } else if (categoria == 2) {
+                            nombreCategoria = "Componentes de computo";
+                            contadorCat2++;
+                        } else if (categoria == 3) {
+                            nombreCategoria = "Accesorios (exentos de IVA)";
+                            contadorCat3++;
+                        } else if (categoria == 4) {
+                            nombreCategoria = "Redes y telecomunicaciones";
+                            contadorCat4++;
+                        }
+                    } while (categoria > 4 || categoria < 1);
+                    do {
                         System.out.println("Ingrese el riesgo tecnologico:\n 1 = S´ı\n 0 = No.");
-                        riesgoTecnologico= input.nextInt();
-                    }while(riesgoTecnologico<0||riesgoTecnologico>1);
-                    do{
+                        riesgoTecnologico = input.nextInt();
+                    } while (riesgoTecnologico < 0 || riesgoTecnologico > 1);
+                    do {
                         System.out.println("Ingrese el stock (minimo 1)");
                         stockIngresado = input.nextInt();
-                    }while(stockIngresado<1);
+                    } while (stockIngresado < 1);
 
-                    System.out.println("Producto ingresado "+nombreProducto);
-                    System.out.println("Precio base: "+precioBase);
-                    if(categoria!=3){
+                    System.out.println("Producto ingresado " + nombreProducto);
+                    System.out.println("Precio base: " + precioBase);
+                    if (categoria != 3) {
                         ivaAplicado = precioBase * iva;
-                        System.out.println("Iva aplicado: "+ivaAplicado);
+                        System.out.println("Iva aplicado: " + ivaAplicado);
                     }
-                    System.out.println("Imc aplicado:"+imcAplicado);
-                    if(riesgoTecnologico==1){
+                    System.out.println("Imc aplicado:" + imcAplicado);
+                    if (riesgoTecnologico == 1) {
                         irtAplicado = precioBase * irt;
                         System.out.println("IRT aplicado: " + irtAplicado);
                     }
                     tceAplicado = precioBase * tce;
                     System.out.println("TCE aplicado: " + tceAplicado);
-                    precioFinalProducto = precioBase + ivaAplicado +imcAplicado + irtAplicado + tceAplicado;
-                    System.out.println("Precio Final: "+precioFinalProducto);
+                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    System.out.println("Precio Final: " + precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
-                    System.out.println("Stock ingresado: "+stockIngresado);
+                    System.out.println("Stock ingresado: " + stockIngresado);
                     // Contar productos
                     totalProductosRegistrados++;
 
@@ -560,18 +624,19 @@ public class Main {
                     totalVentas += precioFinalProducto;
 
 // Contar categorías
-                    if(categoria == 1) contadorCat1++;
-                    else if(categoria == 2) contadorCat2++;
-                    else if(categoria == 3) contadorCat3++;
-                    else if(categoria == 4) contadorCat4++;
+                    if (categoria == 1) contadorCat1++;
+                    else if (categoria == 2) contadorCat2++;
+                    else if (categoria == 3) contadorCat3++;
+                    else if (categoria == 4) contadorCat4++;
 
 // Verificar si es el producto más caro
-                    if(precioFinalProducto > mayorPrecioFinal){
+                    if (precioFinalProducto > mayorPrecioFinal) {
                         mayorPrecioFinal = precioFinalProducto;
                         productoMayorPrecio = nombreProducto;
                     }
 
                 }
+                break;
         }
         System.out.println("\n====== REPORTE FINAL DEL DÍA ======");
 
@@ -601,4 +666,14 @@ public class Main {
         System.out.println("====================================");
 
     }
+
+
+
+
+
+
+
+
+
+
 }
