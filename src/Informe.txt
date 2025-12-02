@@ -1,0 +1,13 @@
+Este programa en Java funciona como un pequeño sistema de registro para productos tecnológicos. Su objetivo es permitir que el usuario ingrese información básica de varios artículos y que el sistema calcule los impuestos que corresponden según las características del producto y el día en que se está trabajando. Todo se maneja por consola y se realiza paso a paso.
+
+Al iniciar, el programa pide dos datos importantes. El primero es el número máximo de productos que se van a registrar. El segundo es el día de operación, ya que no todos los impuestos se aplican de la misma manera. Si el día es sábado o domingo, se activa un impuesto extra. Para evitar errores, el programa no avanza hasta que el usuario ingresa un día válido entre uno y siete.
+
+Una vez definidos estos valores, el sistema empieza a registrar los productos usando un ciclo. Para cada producto se solicita el nombre, el precio base, la categoría, si posee riesgo tecnológico y la cantidad disponible en stock. Cada dato se valida para asegurar que tenga sentido, por ejemplo que el precio sea mayor que cero y que la categoría esté dentro del rango permitido. Esto evita que el programa continúe con valores incorrectos.
+
+La categoría influye directamente en los cálculos, porque algunas están exentas del IVA y otras no. Además, el programa cuenta cuántos productos pertenecen a cada categoría para poder mostrar un resumen al final. También detecta si el producto tiene riesgo tecnológico, ya que esto activa otro impuesto adicional.
+
+Después de ingresar cada producto, el programa calcula los impuestos uno por uno. El IVA se aplica solo cuando la categoría lo permite, el IMC siempre se calcula, el IRT aparece únicamente si el producto tiene riesgo tecnológico y el TCE solo se suma cuando el registro se realiza en fin de semana. Con todos estos valores, el sistema obtiene el precio final del producto y lo muestra de forma ordenada.
+
+Mientras registra los distintos productos, el programa va sumando los impuestos totales del día y también guarda cuál fue el producto con el precio final más alto. Estos datos se muestran al final junto con la cantidad total de productos registrados y la categoría que tuvo mayor ingreso.
+
+En conjunto, este programa demuestra cómo manejar validaciones, ciclos, cálculos y acumulación de datos dentro de un sistema simple de inventario. Aunque no es un sistema avanzado, permite entender bien cómo se pueden procesar varios productos de manera ordenada y generar un informe que resuma toda la actividad del día.tos de forma automática y generando un informe general del día de trabajo. Es útil para comprender cómo manejar ciclos, validación.
