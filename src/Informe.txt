@@ -10,4 +10,5 @@ Después de ingresar cada producto, el programa calcula los impuestos uno por un
 
 Mientras registra los distintos productos, el programa va sumando los impuestos totales del día y también guarda cuál fue el producto con el precio final más alto. Estos datos se muestran al final junto con la cantidad total de productos registrados y la categoría que tuvo mayor ingreso.
 
+
 En conjunto, este programa demuestra cómo manejar validaciones, ciclos, cálculos y acumulación de datos dentro de un sistema simple de inventario. Aunque no es un sistema avanzado, permite entender bien cómo se pueden procesar varios productos de manera ordenada y generar un informe que resuma toda la actividad del día.tos de forma automática y generando un informe general del día de trabajo. Es útil para comprender cómo manejar ciclos, validación.
