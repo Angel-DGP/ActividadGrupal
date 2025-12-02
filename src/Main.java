@@ -100,7 +100,7 @@ public class Main {
                         irtAplicado = precioBase * irt;
                         System.out.println("IRT aplicado: " + irtAplicado);
                     }
-                    precioFinalProducto = precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado;
+                    precioFinalProducto = (precioBase + ivaAplicado + imcAplicado + irtAplicado + tceAplicado) * stockIngresado;
                     System.out.println("Precio Final: " + precioFinalProducto);
                     System.out.println("Categoria: " + nombreCategoria);
                     System.out.println("Stock ingresado: " + stockIngresado);
